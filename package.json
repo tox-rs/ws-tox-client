@@ -1,0 +1,20 @@
+{
+  "name": "ws-tox-client",
+  "version": "0.1.0",
+  "description": "A client for ws-tox",
+  "scripts": {
+    "tsc:w": "tsc -w",
+    "wdm": "webpack-dev-server --hot --inline --mode development",
+
+    "build": "tsc ; webpack --progress -p",
+    "server": "concurrently \"npm run tsc:w\" \"npm run wdm\""
+  },
+  "author": "Сухарик <suhr@i2pmail.org>",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^4.1.0",
+    "webpack": "^4.29.3",
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "^3.1.14"
+  }
+}
