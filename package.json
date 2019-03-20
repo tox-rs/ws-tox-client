@@ -5,16 +5,19 @@
   "scripts": {
     "tsc:w": "tsc -w",
     "wdm": "webpack-dev-server --hot --inline --mode development",
-
     "build": "tsc ; webpack --progress -p",
     "server": "concurrently \"npm run tsc:w\" \"npm run wdm\""
   },
   "author": "Сухарик <suhr@i2pmail.org>",
   "license": "MIT",
+  "dependencies": {
+    "@types/websocket": "0.0.40",
+    "ws-tox-protocol": "github:tox-rs/ws-tox-protocol"
+  },
   "devDependencies": {
     "concurrently": "^4.1.0",
-    "webpack": "^4.29.3",
-    "webpack-cli": "^3.2.3",
-    "webpack-dev-server": "^3.1.14"
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0",
+    "webpack-dev-server": "^3.2.1"
   }
 }
