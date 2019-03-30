@@ -179,10 +179,9 @@ class Input {
     }
 
     isOver(): boolean {
-        let match = this.input.match(" +");
-        let whitespace = match ? match[0] : null;
+        const split = this.input.split(' ');
 
-        return this.input === whitespace;
+        return split.findIndex(s => s !== "") === -1
     }
 }
 
@@ -210,6 +209,17 @@ class Client {
 
         let response = null
         switch (action.action) {
+            case "help":
+                const msgs = [
+                    "Available commands:",
+                    "/help : shows this help message",
+                    "/info : get your name and Tox ID",
+                    "/add toxId [message] : add a friend. If no message, the friend will be added without a friend request",
+                    "/chat num : start chat with the friend with the id `num`"
+                ]
+
+                msgs.forEach(m => printMessage(m))
+                break
             case "info":
                 response = this.tox.info()
 
